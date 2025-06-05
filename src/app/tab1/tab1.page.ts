@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class Tab1Page {
+  isCardVisible: boolean = false; // Inicialmente o card está oculto
+
+  toggleCard() {
+    this.isCardVisible = !this.isCardVisible; // Alterna entre mostrar e ocultar o card
+  }
 
   constructor() {}
 

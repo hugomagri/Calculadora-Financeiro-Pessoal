@@ -1,17 +1,39 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      <strong>H&L</strong> - Emprestimos
     </ion-title>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card>
+    <img alt="Silhouette of mountains" src="assets/img/emprestimo.jpg" />
+    <ion-card-header>
+      <ion-card-title>Simulação de Empréstimo Bancário</ion-card-title>
+      <ion-card-subtitle>Calcule o valor das parcelas do seu empréstimo, considerando o valor, a taxa de juros anual e o número de meses. </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-input label="Valor do empréstimo" type="number" label-placement="floating" fill="outline" placeholder="Digite o valor"></ion-input><br>
+
+      <ion-input label="Taxa de juros anual" label-placement="floating" fill="outline" placeholder="Digite a taxa"></ion-input><br>
+
+      <ion-input label="Números de meses a pagar" label-placement="floating" fill="outline" placeholder="Digite o tempo"></ion-input><br>
+
+      <ion-button color="secondary" expand="block" (click)="toggleCard()">Calcular</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="isCardVisible" color="secondary">
+    <ion-card-header>
+      <ion-card-title>Resultado87</ion-card-title>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content> Card Content </ion-card-content>
+  </ion-card>
+
 </ion-content>
