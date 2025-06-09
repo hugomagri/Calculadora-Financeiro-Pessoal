@@ -1,17 +1,72 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      <strong>H&L</strong> - Despesas
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+   <img alt="img investimento" src="assets/img/despesa.jpg" width="100%"/>
+
+    <ion-card-header>
+      <ion-card-title>Simulação de investimento</ion-card-title>
+      <ion-card-subtitle>
+Insira suas despesas mensais (moradia, alimentação, transporte e lazer) e veja se o total excede sua renda líquida.
+ O app sugere cortes de gastos caso as despesas sejam maiores que a renda. (Nossa sugestão, até 45% para moradia, até 30% para alimentação, até 15% de trasporte e até 5% de lazer.)      </ion-card-subtitle>
+    </ion-card-header>
+
+
+  <ion-card-content>
+  <ion-input [(ngModel)]="moradia" type="number" label="Moradia" label-placement="floating" fill="solid" placeholder="R$"></ion-input>
+ <br>
+
+  <ion-input [(ngModel)]="alimentacao" type="number" label="Alimentação" label-placement="floating" fill="solid" placeholder="R$"></ion-input>
+  <br>
+
+  <ion-input [(ngModel)]="transporte" type="number" label="Transporte" label-placement="floating" fill="solid" placeholder="R$"></ion-input>
+ <br>
+
+  <ion-input [(ngModel)]="lazer" type="number" label="Lazer" label-placement="floating" fill="solid" placeholder="R$"></ion-input>
+ <br>
+
+  <ion-label>Renda Líquida</ion-label>
+  <ion-range min="0" max="20000" step="100" snaps="true" [(ngModel)]="renda">
+    <ion-label slot="end">R$ {{ renda }}</ion-label>
+  </ion-range><br>
+
+  <ion-button expand="block" color="secondary" (click)="SomarDespesas()">
+    Calcular
+  </ion-button>
+</ion-card-content>
+
+</ion-card>
+
+
+
+<ion-card *ngIf="CardResult" color="secondary">
+  <ion-card-header>
+    <ion-card-title>Resultado</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+  Total de despesas: <strong>R$ {{ totalDespesas | number:'1.2-2' }}</strong><br>
+  Renda líquida: <strong>R$ {{ renda | number:'1.2-2' }}</strong><br><br>
+
+  <p><strong>Moradia:</strong> {{ moradiar }}
+    <span *ngIf="moradiaExcesso > 0"> (R$ {{ moradiaExcesso | number:'1.2-2' }})</span>
+  </p>
+  <p><strong>Alimentação:</strong> {{ alimentacaor }}
+    <span *ngIf="alimentacaoExcesso > 0"> (R$ {{ alimentacaoExcesso | number:'1.2-2' }})</span>
+  </p>
+  <p><strong>Transporte:</strong> {{ transporter }}
+    <span *ngIf="transporteExcesso > 0"> (R$ {{ transporteExcesso | number:'1.2-2' }})</span>
+  </p>
+  <p><strong>Lazer:</strong> {{ lazerr }}
+    <span *ngIf="lazerExcesso > 0"> (R$ {{ lazerExcesso | number:'1.2-2' }})</span>
+  </p>
+</ion-card-content>
+
+</ion-card>
 </ion-content>

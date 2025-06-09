@@ -8,7 +8,7 @@
 
 <ion-content [fullscreen]="true">
   <ion-card>
-    <img alt="img emprestimo" src="assets/img/emprestimo.jpg" />
+    <img alt="img emprestimo" src="assets/img/emprestimo.jpg" width="100%" />
     <ion-card-header>
       <ion-card-title>Simulação de Empréstimo Bancário</ion-card-title>
       <ion-card-subtitle>
@@ -23,7 +23,7 @@
         label="Valor do empréstimo"
         type="number"
         label-placement="floating"
-        fill="outline"
+        fill="solid"
         placeholder="Digite o valor">
       </ion-input><br>
 
@@ -33,7 +33,7 @@
         label="Taxa de juros anual (%)"
         type="number"
         label-placement="floating"
-        fill="outline"
+        fill="solid"
         placeholder="Digite a taxa">
       </ion-input><br>
 
@@ -43,7 +43,7 @@
         label="Número de meses a pagar"
         type="number"
         label-placement="floating"
-        fill="outline"
+        fill="solid"
         placeholder="Digite o tempo">
       </ion-input><br>
 
@@ -53,7 +53,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card *ngIf="isCardVisible" color="secondary">
+  <ion-card *ngIf="CardResult" color="secondary">
     <ion-card-header>
       <ion-card-title>Resultado:</ion-card-title>
       <ion-card-subtitle>Valor estimado da parcela mensal:</ion-card-subtitle>

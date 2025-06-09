@@ -7,32 +7,60 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
   <ion-card>
-    <img alt="img emprestimo" src="assets/img/emprestimo.jpg" />
+    <img alt="img investimento" src="assets/img/investimento.jpg" width="100%" />
     <ion-card-header>
-      <ion-card-title>Simulação de Empréstimo Bancário</ion-card-title>
-      <ion-card-subtitle>Calcule o valor futuro do seu investimento, considerando o valor inicial, a taxa de retorno anual e o número de meses de aplicação. </ion-card-subtitle>
+      <ion-card-title>Simulação de investimento</ion-card-title>
+      <ion-card-subtitle>
+Calcule o valor final de um investimento com base no valor inicial,
+na taxa de retorno anual e no período. O app alerta para investimentos de alto risco, com taxa superior a 15% ao ano.      </ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
-      <ion-input label="Valor inicial investido" type="number" label-placement="floating" fill="outline" placeholder="Digite o valor"></ion-input><br>
+      <ion-input
+        [(ngModel)]="valor"
+        name="valor"
+        label="Valor investido"
+        type="number"
+        label-placement="floating"
+        fill="solid"
+        placeholder="Digite o valor">
+      </ion-input><br>
 
-      <ion-input label="Taxa de retorno anual" label-placement="floating" fill="outline" placeholder="Digite a taxa"></ion-input><br>
+      <ion-input
+        [(ngModel)]="taxa"
+        name="taxa"
+        label="Taxa de juros anual (%)"
+        type="number"
+        label-placement="floating"
+        fill="solid"
+        placeholder="Digite a taxa">
+      </ion-input>
+      <p>*Juros com rendimento diario</p><br>
 
-      <ion-input label="Período de investimento" label-placement="floating" fill="outline" placeholder="Digite o tempo"></ion-input><br>
+      <ion-input
+        [(ngModel)]="anos"
+        name="anos"
+        label="Número de anos investido"
+        type="number"
+        label-placement="floating"
+        fill="solid"
+        placeholder="Digite o tempo">
+      </ion-input><br>
 
-      <ion-button color="secondary" expand="block" (click)="calcularInvestimento()">Calcular valor final</ion-button>
+      <ion-button color="secondary" expand="block" (click)="calcularInvestimento()">
+        Calcular
+      </ion-button>
     </ion-card-content>
   </ion-card>
 
-  <ion-card *ngIf="isCardVisible" color="secondary">
+  <ion-card *ngIf="CardResult" color="secondary">
     <ion-card-header>
       <ion-card-title>Resultado:</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-subtitle>Valor do investimento no final do prazo:</ion-card-subtitle>
     </ion-card-header>
-
-    <ion-card-content> Card Content </ion-card-content>
+    <ion-card-content>
+      R$ {{ montante | number:'1.2-2' }}
+    </ion-card-content>
   </ion-card>
-
 </ion-content>
