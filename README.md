@@ -1,81 +1,68 @@
 
-# Planejador Financeiro Pessoal
+# 📱 H&L - Finanças Pessoais
 
-Este é um aplicativo de planejamento financeiro pessoal desenvolvido utilizando **Ionic** e **Angular**. Ele permite simular empréstimos bancários, investimentos e controlar despesas mensais. O app oferece alertas e sugestões para ajudar o usuário a tomar decisões financeiras mais informadas e equilibrar seu orçamento.
+Este aplicativo foi desenvolvido como parte de uma entrega para o **curso profissionalizante de desenvolvimento de software da fiap na matéria de Linguagem de Programação III**, em dupla com **Luiza Sales**. O foco do projeto é a **educação financeira**, permitindo simulações de empréstimos, investimentos e controle de despesas mensais.
 
-## Funcionalidades
+Utilizamos o **Ionic Framework** com **Angular**, explorando conceitos de UI responsiva, lógica de negócios e manipulação de dados com `ngModel`. Neste repositório, estão incluídos apenas os arquivos **essenciais para o funcionamento da lógica principal** do aplicativo.
 
-### 1. Simulação de Empréstimo Bancário
-O usuário pode calcular o valor das parcelas do empréstimo, inserindo o valor total do empréstimo, a taxa de juros anual e o número de parcelas. O app alertará o usuário se a taxa de juros for superior a 20% ao ano, indicando um risco elevado.
+## 🧩 Funcionalidades
 
-### 2. Simulação de Investimento
-Essa funcionalidade permite calcular o valor final de um investimento com base no valor inicial, na taxa de retorno anual e no período de investimento. O app alerta para investimentos de alto risco, caso a taxa de retorno seja superior a 15% ao ano.
+O app é dividido em três abas principais:
 
-### 3. Simulação de Despesas Mensais
-Aqui, o usuário insere o valor de suas despesas mensais (moradia, alimentação, transporte e lazer) e o app calcula o total de despesas. Se as despesas forem superiores à renda líquida do usuário, o app sugere cortes de gastos em categorias específicas.
+### 🔹 Tab 1 - Empréstimos
+Simula o valor das parcelas mensais de um empréstimo com base no valor total, taxa de juros anual e número de meses.
+- Inputs: valor do empréstimo, taxa de juros, tempo de pagamento.
+- Resultado: valor estimado da parcela mensal.
+- Função: `calcularEmprestimo()`.
 
-## Tecnologias Utilizadas
+### 🔹 Tab 2 - Investimentos
+Calcula o valor futuro de um investimento com base em aportes únicos, considerando juros compostos com capitalização diária.
+- Inputs: valor inicial, taxa de juros anual, tempo (anos).
+- Alerta para investimentos de alto risco (taxa anual > 15%).
+- Função: `calcularInvestimento()`.
 
-- **Frontend**: Ionic Framework, Angular
-- **Lógica de Programação**: Condicionais `if` e `else` para validação de dados e controle de fluxo
-- **Importações**: Módulos do Ionic e Angular para estruturação das funcionalidades do app.
+### 🔹 Tab 3 - Despesas
+Permite ao usuário inserir suas despesas mensais e comparar com a renda líquida mensal.
+- Inputs: valores de moradia, alimentação, transporte, lazer e renda mensal.
+- Avaliação automática com sugestões de ajustes por categoria.
+- Função: `SomarDespesas()`.
 
-### Exemplo de Lógica com if/else
+## 📦 Tecnologias e Bibliotecas
 
-Utilizamos a lógica condicional `if/else` para validar as taxas de juros e retorno do investimento, garantindo que o usuário receba alertas adequados. Exemplo:
+- **Ionic Framework**: para a interface moderna e responsiva.
+- **Angular**: estrutura do app com TypeScript.
+- **ngModel**: binding bidirecional dos inputs.
+- **Ionic Components**: `ion-card`, `ion-input`, `ion-button`, `ion-range`, etc.
+- **Pipes**: `number:'1.2-2'` para formatação de valores monetários.
 
-```typescript
-if (taxaDeJuros > 0.20) {
-  alert("A taxa de juros é muito alta! O empréstimo pode ser arriscado.");
-} else {
-  alert("Taxa de juros dentro da média. Avalie com mais cautela.");
-}
-```
+## 🛠️ Estrutura do Código
 
-### Exemplo de Importação de Módulos
+Cada aba do app é composta por dois arquivos:
+- `tabX.page.ts`: lógica de cálculo.
+- `tabX.page.html`: estrutura visual e inputs.
 
-Abaixo está um exemplo de como utilizamos imports no projeto para estruturar a funcionalidade das páginas:
+As imagens utilizadas são carregadas de `assets/img`.
 
-```typescript
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+## 🚀 Como Rodar o Projeto
 
-@Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
-})
-export class HomePage {
-  constructor(public navCtrl: NavController) {}
-}
-```
-
-## Como Executar o Projeto
-
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/SEU-USUARIO/planejador-financeiro-pessoal.git
-   ```
-2. Navegue até o diretório do projeto:
-   ```bash
-   cd planejador-financeiro-pessoal
-   ```
-3. Instale as dependências:
+1. Instale as dependências:
    ```bash
    npm install
    ```
-4. Inicie o aplicativo:
+
+2. Rode o app:
    ```bash
    ionic serve
    ```
 
-## Screenshots (opcional)
+3. Acesse em: `http://localhost:8100`.
 
-*Adicione capturas de tela ou imagens do seu aplicativo aqui.*
+## 👩‍💻 Autoria
 
-## Contribuições
+Projeto desenvolvido por **Hugo Mariutti** e **Luiza Sales**  
+Matéria: **Linguagem de Programação III**
 
-Se você deseja contribuir para o projeto, fique à vontade para enviar um pull request. Toda contribuição é bem-vinda!
+## 📷 Imagens de Demonstração
 
-## Licença
+> (Opcional: Adicione capturas de tela da interface)
 
-Este projeto está licenciado sob a [Licença MIT](LICENSE).
