@@ -46,10 +46,10 @@ As imagens utilizadas são carregadas de `assets/img`.
 ## 🚀 Como Rodar o Projeto
 
 1. Como clonar o repositorio:
-   
+
    ```bash
-  git clone https://github.com/seu-usuario/seu-repositorio.git
-  ```
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   ```
 
 ## 👩‍💻 Autoria
 
@@ -61,6 +61,3 @@ Matéria: **Linguagem de Programação III**
 <img src="tela 1.png" width="100px">
 <img src="tela 2.png" width="100px">
 <img src="tela 3.png" width="100px">
-
-
-
