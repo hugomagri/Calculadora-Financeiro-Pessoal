@@ -45,17 +45,11 @@ As imagens utilizadas são carregadas de `assets/img`.
 
 ## 🚀 Como Rodar o Projeto
 
-1. Instale as dependências:
+1. Como clonar o repositorio:
    ```bash
-   npm install
-   ```
+  git clone https://github.com/seu-usuario/seu-repositorio.git
 
-2. Rode o app:
-   ```bash
-   ionic serve
    ```
-
-3. Acesse em: `http://localhost:8100`.
 
 ## 👩‍💻 Autoria
 
@@ -64,5 +58,9 @@ Matéria: **Linguagem de Programação III**
 
 ## 📷 Imagens de Demonstração
 
-> (Opcional: Adicione capturas de tela da interface)
+<img src="tela 1.jpg" width="100px">
+<img src="tela 2.jpg" width="100px">
+<img src="tela 3.jpg" width="100px">
+
+
 
