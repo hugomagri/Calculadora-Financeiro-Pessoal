@@ -58,6 +58,9 @@ Matéria: **Linguagem de Programação III**
 
 ## 📷 Imagens de Demonstração
 
-<img src="tela 1.png" width="100px">
-<img src="tela 2.png" width="100px">
-<img src="tela 3.png" width="100px">
+<p>
+  <img src="tela 1.png" width="300px" style="margin-right: 10px;">
+  <img src="tela 2.png" width="300px" style="margin-right: 10px;">
+  <img src="tela 3.png" width="300px">
+</p>
+
